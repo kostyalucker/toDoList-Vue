@@ -1,0 +1,10 @@
+name: Todocontroller
+form: $/kostya/todo/models/todo/fields.yaml
+modelClass: Kostya\Todo\Models\Todo
+defaultRedirect: kostya/todo/todocontroller
+create:
+    redirect: 'kostya/todo/todocontroller/update/:id'
+    redirectClose: kostya/todo/todocontroller
+update:
+    redirect: kostya/todo/todocontroller
+    redirectClose: kostya/todo/todocontroller

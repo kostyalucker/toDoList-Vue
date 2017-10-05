@@ -1,0 +1,11 @@
+list: $/kostya/todo/models/todo/columns.yaml
+modelClass: Kostya\Todo\Models\Todo
+title: Todocontroller
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'kostya/todo/todocontroller/update/:id'

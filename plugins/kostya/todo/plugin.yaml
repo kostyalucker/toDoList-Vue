@@ -1,0 +1,11 @@
+plugin:
+    name: 'kostya.todo::lang.plugin.name'
+    description: 'kostya.todo::lang.plugin.description'
+    author: Kostya
+    icon: oc-icon-list
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Todos
+        url: kostya/todo/todocontroller
+        icon: icon-list
