@@ -12,6 +12,15 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+
+a  {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   color: #333;
 }
@@ -20,9 +29,128 @@ $width: 400px;
 .todo-app {
   width: $width;
   border:  1px solid #ccc;
+  padding: 40px;
+  padding-top: 0;
+  border-radius: 5px;
+  min-height: 300px;
+}
+.app-header {
+  text-align: center;
+  h1 {
+    color: lightcoral;
+  }
+  .new-todo {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    font-style: italic;
+    color: #333;
+    &::placeholder {
+      text-align: center;
+    }
+  }
 }
 
+.toggle-all {
+  display: none;
+}
+
+.todo-list {
+  overflow-y: hidden;
+  padding: 0;
+  min-height: 100px;
+  li {
+    padding: 10px;
+    transition: .2s ease-in-out;
+    .view {
+      display: flex;
+      position: relative;
+      label {
+        color: #555;
+        font-size:16px;
+        font-weight:lighter;
+        margin-left: 10px;
+      }
+      button {
+        position: absolute;
+        right: 0;
+        width: 20px ;
+        height: 20px;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          background: #fff;
+        }
+        &:before {
+          content: '';
+          width: 50%;
+          left: 50%;
+          top:50%;
+          margin-left: -25%;
+          transform: rotate(45deg);
+          height: 1px;
+          background: lightcoral;
+          position: absolute;
+        }
+        &:after{
+          content: '';
+          width: 50%;
+          left: 50%;
+          top:50%;
+          margin-left: -25%;
+          transform: rotate(-45deg);
+          height: 1px;
+          background: lightcoral;
+          position: absolute;
+        }
+      }
+    }
+    &:hover {
+      background: #f7f7f7;
+    }
+  }
+}
 .app-footer {
  border-top: 1px solid ;
   text-align: center;
+  .filter-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    li {
+      margin: 0 10px;
+      min-width: 100px;
+      padding: 5px;
+      background: #f2f2f2;
+      border: 1px solid transparent;
+      &:hover {
+        border: 1px solid #f2f2f2;
+        background: #fff;
+      }
+    }
+  }
 }
+
+.edit {
+  display: none;
+}
+
+.todo-list .editing .edit {
+  display: block;
+  width: 300px;
+  padding: 15px;
+}
+
+.todo-list .editing .view {
+  display: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+

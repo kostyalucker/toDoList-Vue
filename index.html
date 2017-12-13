@@ -13,26 +13,32 @@
   <section class="todo-app">
       <header class="app-header">
          <h1>Todo-app</h1>
-          <input type="text" class="new-todo" v-model="newTodo" v-on:keyup.enter="addTodo">
+          <input placeholder="Что нужно сделать?" type="text" class="new-todo" v-model="newTodo" @keyup.enter="addTodo">
       </header>
       <section class="app-main">
           <input type="checkbox" class="toggle-all" id="toggle-all">
           <ul class="todo-list">
-              <li v-for="todo in todos" class="todo">
-                  <div class="vie">
+              <li v-for="todo in filteredTodos"
+              :class="{editing: todo == editedTodo, completed: todo.completed}">
+                  <div class="view">
                       <input type="checkbox" class="toggle" v-model="todo.completed">
-                      <label>{{todo.title}}</label>
+                      <label @dblclick="editTodo(todo)">{{todo.title}}</label>
                       <button class="remove" @click="removeTodo(todo)"></button>
                   </div>
+                  <input type="text" class="edit" v-model="todo.title" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)">
               </li>
           </ul>
       </section>
       <footer class="app-footer">
-          <p>Test App</p>
-          <p>Aloha guys!</p>
+          <ul class="filter-list">
+              <li><a href="#" @click.prevent="visibility='all'" :class="{selected: visibility == 'all'}">All</a></li>
+              <li><a href="#" @click.prevent="visibility='active'" :class="{selected: visibility == 'active'}">Active</a></li>
+              <li><a href="#" @click.prevent="visibility='completed'" :class="{selected: visibility == 'completed'}">Completed</a></li>
+          </ul>
       </footer>
   </section>
 
   <script src="main.js"></script>
+
 </body>
 </html>
