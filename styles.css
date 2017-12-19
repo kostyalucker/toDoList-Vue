@@ -1,0 +1,142 @@
+body {
+  font-family: Roboto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
+  margin: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+h1 {
+  color: #333; }
+
+::-webkit-scrollbar {
+  width: 4px; }
+
+::-webkit-scrollbar-thumb {
+  background: lightcoral; }
+
+.todo-app {
+  width: 400px;
+  border: 1px solid #ccc;
+  padding: 40px;
+  padding-top: 0;
+  border-radius: 5px;
+  min-height: 300px; }
+
+.app-header {
+  text-align: center; }
+  .app-header h1 {
+    color: lightcoral; }
+  .app-header .new-todo {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    font-style: italic;
+    color: #333; }
+    .app-header .new-todo::placeholder {
+      text-align: center; }
+
+.toggle-all {
+  display: none; }
+
+.app-main {
+  height: 300px;
+  overflow-y: scroll; }
+
+.todo-list {
+  overflow-y: hidden;
+  padding: 0;
+  min-height: 100px; }
+  .todo-list li {
+    padding: 10px;
+    transition: .2s ease-in-out; }
+    .todo-list li .view {
+      display: flex;
+      position: relative; }
+      .todo-list li .view label {
+        color: #555;
+        font-size: 16px;
+        font-weight: lighter;
+        margin-left: 10px; }
+      .todo-list li .view button {
+        position: absolute;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        outline: none;
+        border: 1px solid lightcoral;
+        cursor: pointer;
+        background: #fff; }
+        .todo-list li .view button:hover {
+          background: #fff; }
+        .todo-list li .view button:before {
+          content: '';
+          width: 50%;
+          left: 50%;
+          top: 50%;
+          margin-left: -25%;
+          transform: rotate(45deg);
+          height: 1px;
+          background: lightcoral;
+          position: absolute; }
+        .todo-list li .view button:after {
+          content: '';
+          width: 50%;
+          left: 50%;
+          top: 50%;
+          margin-left: -25%;
+          transform: rotate(-45deg);
+          height: 1px;
+          background: lightcoral;
+          position: absolute; }
+
+.app-footer {
+  border-top: 1px solid #ccc;
+  text-align: center; }
+  .app-footer .filter-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; }
+    .app-footer .filter-list a {
+      font-size: 14px;
+      margin: 0 10px;
+      min-width: 100px;
+      padding: 5px;
+      border: 1px solid #777;
+      border-radius: 3px; }
+
+.edit {
+  display: none; }
+
+.todo-list .editing .edit {
+  display: block;
+  width: 300px;
+  padding: 15px; }
+
+.todo-list .editing .view {
+  display: none; }
+
+.completed {
+  text-decoration: line-through;
+  background: lightcoral; }
+
+.selected {
+  background: lightcoral;
+  color: #fff;
+  border: transparent !important; }
+
+/*# sourceMappingURL=styles.css.map */
