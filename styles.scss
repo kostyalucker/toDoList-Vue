@@ -25,6 +25,18 @@ h1 {
   color: #333;
 }
 
+::-webkit-scrollbar {
+
+  width: 4px;
+
+}
+::-webkit-scrollbar-thumb {
+
+  background: lightcoral;
+
+}
+
+
 $width: 400px;
 .todo-app {
   width: $width;
@@ -56,7 +68,10 @@ $width: 400px;
 .toggle-all {
   display: none;
 }
-
+.app-main {
+  height: 300px;
+  overflow-y: scroll;
+}
 .todo-list {
   overflow-y: hidden;
   padding: 0;
@@ -80,8 +95,9 @@ $width: 400px;
         height: 20px;
         border-radius: 50%;
         outline: none;
-        border: none;
+        border: 1px solid lightcoral;
         cursor: pointer;
+        background: #fff;
         &:hover {
           background: #fff;
         }
@@ -109,29 +125,23 @@ $width: 400px;
         }
       }
     }
-    &:hover {
-      background: #f7f7f7;
-    }
   }
 }
 .app-footer {
- border-top: 1px solid ;
+ border-top: 1px solid #ccc ;
   text-align: center;
   .filter-list {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    li {
+    a {
+      font-size:14px;
       margin: 0 10px;
       min-width: 100px;
       padding: 5px;
-      background: #f2f2f2;
-      border: 1px solid transparent;
-      &:hover {
-        border: 1px solid #f2f2f2;
-        background: #fff;
-      }
+      border: 1px solid #777;
+      border-radius: 3px;
     }
   }
 }
@@ -152,5 +162,11 @@ $width: 400px;
 
 .completed {
   text-decoration: line-through;
+  background: lightcoral;
 }
 
+.selected {
+  background: lightcoral;
+  color: #fff;
+  border: transparent !important;
+}

@@ -7,7 +7,10 @@ new Vue({
             newTodo: '',
             todos: [{id: 0, title: 'New Todo', completed: true}],
             editedTodo: null,
-            visibility: 'all'
+            visibility: 'all',
+            isAll: false,
+            isActive: false,
+            isCompleted: false
         }
     },
     created() {
@@ -15,9 +18,9 @@ new Vue({
     },
     computed : {
         filteredTodos(){
-            if(this.visibility == 'all') {
+            if(this.visibility === 'all') {
                 return this.todos;
-            } else if (this.visibility == 'active') {
+            } else if (this.visibility === 'active') {
                 return this.todos.filter(function (todo) {
                     return !todo.completed;
                 })
@@ -55,4 +58,4 @@ new Vue({
         }
 
     }
-})
+});
